@@ -1,7 +1,6 @@
 class MessageQueue {
     var queues = mutableListOf<Queue>()
 
-
     init {
         var i=0
 
