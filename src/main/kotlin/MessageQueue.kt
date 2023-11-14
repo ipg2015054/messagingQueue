@@ -1,4 +1,6 @@
-class MessageQueue {
+class MessageQueue private constructor() {
+
+
     var queues = mutableListOf<Queue>()
 
     init {
@@ -12,6 +14,15 @@ class MessageQueue {
             queues.add(queue)
             i++
             if(i == 5) break
+        }
+    }
+
+    companion object {
+        private var messageQueue: MessageQueue? = null
+        fun getInstance(): MessageQueue {
+            if (messageQueue == null) messageQueue = MessageQueue()
+
+            return messageQueue as MessageQueue
         }
     }
 

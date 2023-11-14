@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    val messageQueue = MessageQueue()
+    val messageQueue = MessageQueue.getInstance()
 
     // Add an observer
     val observer1 = Observer1()
