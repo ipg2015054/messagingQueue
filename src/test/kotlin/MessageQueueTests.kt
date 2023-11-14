@@ -41,4 +41,17 @@ class MessageQueueTests {
 
         assertFails { messageQueue.addSubscriber(observer1, 7) }
     }
+
+    @Test
+    fun test_publish() {
+        val messageQueue = MessageQueue()
+
+        val observer1 = Observer1()
+
+        messageQueue.addSubscriber(observer1, 0)
+
+        messageQueue.publish(0, "A message")
+
+        assertEquals(messageQueue.queues[0].messages.size, 0)
+    }
 }
